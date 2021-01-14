@@ -320,7 +320,7 @@ class APIHelper(object):
                 dictionary[obj._names[name]] = dict()
                 for key in value:
                     dictionary[obj._names[name]][key] = APIHelper.to_dictionary(value[key]) if hasattr(value[key], "_names") else value[key]
-            else:
+            elif value is not None:
                 dictionary[obj._names[name]] = APIHelper.to_dictionary(value) if hasattr(value, "_names") else value
 
         # Loop through all additional properties in this model
