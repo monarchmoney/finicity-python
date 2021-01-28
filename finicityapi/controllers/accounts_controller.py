@@ -128,7 +128,6 @@ class AccountsController(BaseController):
             'Finicity-App-Key': Configuration.finicity_app_key,
             'Content-Length': content_length,
             'Accept': accept,
-            # 'interactive': False
         }
 
         # Prepare and execute request
