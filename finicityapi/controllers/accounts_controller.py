@@ -45,7 +45,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/institutionLogins/{institutionLoginId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id,
             'institutionLoginId': institution_login_id
         })
@@ -115,7 +115,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/institutionLogins/{institutionLoginId}/accounts'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id,
             'institutionLoginId': institution_login_id
         })
@@ -128,7 +128,7 @@ class AccountsController(BaseController):
             'Finicity-App-Key': Configuration.finicity_app_key,
             'Content-Length': content_length,
             'Accept': accept,
-            'interactive': False
+            # 'interactive': False
         }
 
         # Prepare and execute request
@@ -175,7 +175,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/institutionLogins/{institutionLoginId}/accounts'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id,
             'institutionLoginId': institution_login_id
         })
@@ -231,7 +231,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/accounts/{accountId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id,
             'accountId': account_id
         })
@@ -283,7 +283,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/accounts/{accountId}'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id,
             'accountId': account_id
         })
@@ -336,7 +336,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/accounts'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id
         })
         _query_builder = Configuration.get_base_uri()
@@ -396,7 +396,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/institutions/{institutionId}/accounts'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id,
             'institutionId': institution_id
         })
@@ -491,7 +491,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/accounts/{accountId}/transactions/historic'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id,
             'accountId': account_id
         })
@@ -559,7 +559,7 @@ class AccountsController(BaseController):
 
         # Prepare query URL
         _url_path = '/aggregation/v1/customers/{customerId}/accounts'
-        _url_path = APIHelper.append_url_with_template_parameters(_url_path, { 
+        _url_path = APIHelper.append_url_with_template_parameters(_url_path, {
             'customerId': customer_id
         })
         _query_builder = Configuration.get_base_uri()
