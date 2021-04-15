@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import copy
 
 import finicityapi.models.categorization
 
@@ -99,7 +100,8 @@ class Transaction(object):
                  unit_quantity=None,
                  unit_value=None,
                  categorization=None,
-                 additional_properties = {}):
+                 additional_properties = {},
+                 json_data=None):
         """Constructor for the Transaction class"""
 
         # Initialize members of the class
@@ -126,6 +128,9 @@ class Transaction(object):
         # Add additional model properties to the instance
         self.additional_properties = additional_properties
 
+        # Store original response
+        self.json_data = json_data
+
 
     @classmethod
     def from_dictionary(cls,
@@ -143,6 +148,8 @@ class Transaction(object):
         """
         if dictionary is None:
             return None
+
+        json_data = copy.deepcopy(dictionary)
 
         # Extract variables from the dictionary
         id = dictionary.get('id')
@@ -190,6 +197,5 @@ class Transaction(object):
                    unit_quantity,
                    unit_value,
                    categorization,
-                   dictionary)
-
-
+                   dictionary,
+                   json_data=json_data)

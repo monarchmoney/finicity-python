@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
+import copy
 
 import finicityapi.models.customer_account_detail
 import finicityapi.models.customer_account_position
+
 
 class CustomerAccount(object):
 
@@ -100,7 +102,8 @@ class CustomerAccount(object):
                  last_transaction_date=None,
                  detail=None,
                  position=None,
-                 additional_properties = {}):
+                 additional_properties = {},
+                 json_data=None):
         """Constructor for the CustomerAccount class"""
 
         # Initialize members of the class
@@ -128,6 +131,8 @@ class CustomerAccount(object):
         # Add additional model properties to the instance
         self.additional_properties = additional_properties
 
+        # Store original response
+        self.json_data = json_data
 
     @classmethod
     def from_dictionary(cls,
@@ -145,6 +150,8 @@ class CustomerAccount(object):
         """
         if dictionary is None:
             return None
+
+        json_data = copy.deepcopy(dictionary)
 
         # Extract variables from the dictionary
         id = dictionary.get('id')
@@ -198,6 +205,5 @@ class CustomerAccount(object):
                    last_transaction_date,
                    detail,
                    position,
-                   dictionary)
-
-
+                   dictionary,
+                   json_data=json_data)
